@@ -1,13 +1,12 @@
 import { Rettiwt } from 'rettiwt-api';
 
 const rettiwt = new Rettiwt();
-const getTwitterMedia = async tweetId => {
+export const getTwitterMedia = async tweetId => {
     try {
         let res = await rettiwt.tweet.details(tweetId);
         return res;
     } catch (error) {
-        return error;
+        console.error(`Error fetching Twitter media for ID ${tweetId}:`, error);
+        throw error;
     }
 };
-
-export { getTwitterMedia };
