@@ -25,7 +25,6 @@ const getProfile = async actor => {
 export const getPostThread = async (postId, actor) => {
     try {
         const userDID = await getProfile(actor);
-
         const res = await agent.getPostThread({
             uri: `at://${userDID.did}/app.bsky.feed.post/${postId}`,
         });
@@ -36,6 +35,3 @@ export const getPostThread = async (postId, actor) => {
         throw error;
     }
 };
-
-//https://bsky.app/profile/bsky.app/post/3l6oveex3ii2l
-//https://bsky.app/profile/glacytale.bsky.social/post/3lt6megwgjs2q
