@@ -13,7 +13,6 @@ router.get('/:actor/:id', async (req, res) => {
 
     try {
         const BskyData = await getPostThread(BskyId, BskyActor);
-        console.log('BSKY: ', BskyData);
         return res.json({
             details: 'Bsky data retrieved!',
             data: BskyData,

@@ -27,11 +27,4 @@ router.get('/:id', async (req, res) => {
     });
 });
 
-// router.get('/',async (req,res) => {
-//     res.status(400).json({
-//         error: 'Could not parse tweet information from the provided input.',
-//         providedInput: tweetInput,
-//     });
-// })
-
 export default router;
