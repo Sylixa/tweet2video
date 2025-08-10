@@ -6,7 +6,7 @@ const zodConfiguration = z.object({
     port: z.number(),
 });
 
-console.log(process.env.NODE_ENV);
+console.log('App Mode: ', process.env.NODE_ENV);
 export const configuration = zodConfiguration.parse({
     environment: process.env.NODE_ENV || 'development',
     port: process.env.PORT ? parseInt(process.env.PORT) : 4242,
