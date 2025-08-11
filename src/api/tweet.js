@@ -35,10 +35,12 @@ router.get('/:id', async (req, res) => {
 });
 router.get('/:id/timeline', async (req, res) => {
     const userId = req.params.id;
+    const nextCursor = req.query.cursor || undefined;
+    console.log(req);
 
     try {
-        const userTimeline = await getTwitterUserTimeline(userId);
-        console.log('Request Timeline from Uid: ', userId);
+        const userTimeline = await getTwitterUserTimeline(userId, nextCursor);
+        console.log(`Request Timeline from Uid:${userId}`);
 
         if (!userTimeline) {
             res.status(200).json({
